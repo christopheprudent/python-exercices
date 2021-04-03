@@ -1,0 +1,32 @@
+import itertools
+from functools import partial
+
+X = [10, 20, 20, 20]
+Y = [10, 20, 30, 40]
+Z = [10, 30, 40, 20]
+T = 70
+
+def check_sum_array(N, *nums):
+  if sum(x for x in nums) == N:
+    return (True, nums)
+  else:
+      return (False, nums)
+
+pro = itertools.product(X,Y,Z)
+list_pro = list(pro)
+print('3 lists, and find sum of 3 items, each from distinct list, which sum equal to', T)
+print('list X', X)
+print('list Y', Y)
+print('list Z', Z)
+print('cartesian product', list_pro)
+
+func = partial(check_sum_array, T)
+sums = list(itertools.starmap(func, iter(list_pro)))
+print('results:', sums)
+
+result = set()
+for s in sums:
+    if s[0] == True and s[1] not in result:
+      result.add(s[1])
+      print(result)
+
