@@ -1,0 +1,15 @@
+# web solution
+import json
+
+# web solution
+def encode_complex(object):
+    # check using isinstance method
+    if isinstance(object, complex):
+        return [object.real, object.imag]
+    # raised error if object is not complex
+    raise TypeError(repr(object) + " is not JSON serialized")
+
+complex_obj = json.dumps(2 + 3j, default=encode_complex)
+print(complex_obj) 
+
+# see: https://yzhong-cs.medium.com/serialize-and-deserialize-complex-json-in-python-205ecc636caa
