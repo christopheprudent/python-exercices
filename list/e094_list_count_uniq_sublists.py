@@ -5,6 +5,7 @@ def unique_sublists(input_list):
     result ={}
     for l in input_list: 
         result.setdefault(tuple(l), list()).append(1) 
+    print('result (setdefault):', result)
     for a, b in result.items(): 
         result[a] = sum(b)
     return result
