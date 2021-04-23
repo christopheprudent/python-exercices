@@ -1,5 +1,5 @@
 def issorted(l):
-    return all(y > x for x, y in zip(l, l[1:]))
+    return all(y >= x for x, y in zip(l, l[1:]))
 
 # web solution
 def is_sort_list(nums):
