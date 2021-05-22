@@ -1,0 +1,20 @@
+import collections
+
+d = collections.deque(['Red', 'Green', 'White'])
+print('collection', d)
+
+print('ajout à gauche')
+d.appendleft('Pink')
+print(d)
+print('ajout à droite')
+d.append('Orange')
+print(d)
+print('suppression à droite')
+d.pop()
+print(d)
+print('suppression à gauche')
+d.popleft()
+print(d)
+print('inversion des données')
+d.reverse()
+print(d)
