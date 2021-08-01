@@ -5,4 +5,7 @@ date_obj = datetime.datetime.strptime(date_str, '%y/%m/%d')
 print('la date saisie', date_obj, 'correspond à la semaine', date_obj.strftime("%W"), 'de l\'année')
 
 # web solution
-print(datetime.date(date_obj.year, date_obj.month, date_obj.day).isocalendar()[1])
+# tuple(year, week and weekday)
+_cal = datetime.date(date_obj.year, date_obj.month, date_obj.day).isocalendar()
+print(_cal)
+print(_cal[1])
