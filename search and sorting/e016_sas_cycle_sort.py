@@ -1,7 +1,9 @@
 # https://rosettacode.org/wiki/Sorting_algorithms/Cycle_sort#Python
 
 def cycleSort(vector):
-    "Sort a vector in place and return the number of writes."
+    """
+    Sort a vector in place and return the number of writes.
+    """
     writes = 0
  
     print(f'vector={vector}')
