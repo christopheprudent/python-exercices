@@ -1,3 +1,4 @@
+# https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/
 # Python3 program to implement 
 # optimized delete in BST.
 

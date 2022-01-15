@@ -66,12 +66,12 @@ def deleteNode(root, key):
         return root
 
     # If the key to be deleted 
-    # is smaller than the root's
-    # key then it lies in  left subtree
+    # is smaller than the root's key
+    # then it lies in  left subtree
     if key < root.key:
         root.left = deleteNode(root.left, key)
 
-    # If the kye to be delete 
+    # If the key to be deleted
     # is greater than the root's key
     # then it lies in right subtree
     elif(key > root.key):
