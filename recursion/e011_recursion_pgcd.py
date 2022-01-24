@@ -3,6 +3,8 @@ GCD greatest common divisor
 
 """
 
+# https://www.mathematiquesfaciles.com/exercices/exercice-maths-2/exercice-maths-23038.php
+
 def gcd(x, y):
     if x == y:
         return x 
