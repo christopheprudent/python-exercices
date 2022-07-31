@@ -19,6 +19,9 @@ student_data = pd.DataFrame(
 print("Original DataFrame:")
 print(student_data)
 
-print('\nMean, min, and max value of age for each value of the school:')
-grouped_single = student_data.groupby('school_code').agg({'age': ['mean', 'min', 'max']})
-print(grouped_single)
+print('\nSplit the said data on school_code, class wise:')
+result = student_data.groupby(['school_code', 'class'])
+for name,group in result:
+    print("\nGroup:")
+    print(name)
+    print(group)
