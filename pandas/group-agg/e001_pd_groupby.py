@@ -31,3 +31,6 @@ print(type(result))
 
 print('\nCast grouping as a list:')
 print(list(result))
+
+print("\nCall school code 's001':")
+print(result.get_group('s001'))
