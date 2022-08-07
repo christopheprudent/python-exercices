@@ -1,4 +1,6 @@
 import pandas as pd
+#import numpy as np
+
 df = pd.DataFrame({
 'ord_no':[70001,70009,70002,70004,70007,70005,70008,70010,70003,70012,70011,70013],
 'purch_amt':[150.5,270.65,65.26,110.5,948.5,2400.6,5760,1983.43,2480.4,250.45, 75.29,3045.6],
@@ -12,6 +14,14 @@ print(df)
 gr_data = df.groupby(['customer_id','salesman_id']).agg({'purch_amt': 'sum'})
 print("\nSum of purchase amount, by (customer_id, salesman_id)")
 print(gr_data)
-gr_data["% (Purch Amt.)"] = gr_data.apply(lambda x:  100*x / x.sum())
+
+print("\nSum of all purchase amount")
+_purch_amt_sum = gr_data['purch_amt'].sum()
+print(_purch_amt_sum, type(_purch_amt_sum))
+#_purch_amt_sum = float(_purch_amt_sum)
+#print(_purch_amt_sum, type(_purch_amt_sum))
+
+#gr_data["% (Purch Amt.)"] = gr_data.apply(lambda x:  100*x / x.sum())
+gr_data["% (Purch Amt.)"] = gr_data.apply(lambda x:  100*x / _purch_amt_sum)
 print("\nPercentage of purch_amt in each group of customer_id:")
 print(gr_data)
